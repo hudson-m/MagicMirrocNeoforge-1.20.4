@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:glass"
+    },
+    "x": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "xax",
+    "xxx"
+  ],
+  "result": {
+    "item": "magicmirror:magic_mirror"
+  }
+}

@@ -1,0 +1,6 @@
+/spawn
+/spawnpoint
+/tp spawnpoint
+/tp
+/tp Dev
+/tp Dev spawnpoint
