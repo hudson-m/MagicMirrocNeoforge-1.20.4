@@ -4,3 +4,10 @@
 /tp
 /tp Dev
 /tp Dev spawnpoint
+/gamemode survival
+/gamemode
+/gamemode creative
+/gamemode survival
+/gamemode creative
+/gamemode survival
+/gamemode creative

@@ -294,12 +294,6 @@
     },
     "done": true
   },
-  "magicmirror:recipes/food/healing_apple_recipe": {
-    "criteria": {
-      "has_item": "2025-04-03 22:28:07 -0300"
-    },
-    "done": true
-  },
   "magicmirror:recipes/misc/magic_mirror_recipe": {
     "criteria": {
       "has_item": "2025-04-03 22:48:24 -0300"

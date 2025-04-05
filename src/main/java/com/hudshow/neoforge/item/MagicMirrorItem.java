@@ -2,6 +2,8 @@ package com.hudshow.neoforge.item;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -9,6 +11,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BedBlock;
+import net.minecraft.world.level.block.RespawnAnchorBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class MagicMirrorItem extends Item {
 
@@ -41,15 +46,21 @@ public class MagicMirrorItem extends Item {
     }
 
     private BlockPos getSpawnPosition(ServerPlayer player) {
-        // Tenta pegar o spawn pessoal do jogador
-        BlockPos spawnPos = player.getRespawnPosition();
+        // Verifica se o spawn point ainda é válido
+        if (player.getRespawnPosition() != null) {
+            // Obtém a dimensão de respawn (pode ser diferente do Overworld)
+            ResourceKey<Level> respawnDimension = player.getRespawnDimension();
+            ServerLevel respawnLevel = player.server.getLevel(respawnDimension);
 
-        // Se não tiver spawn definido, usa o spawn global do mundo
-        if (spawnPos == null) {
-            spawnPos = player.server.getLevel(Level.OVERWORLD).getSharedSpawnPos();
+            // Verifica se o bloco no spawn ainda é válido (não foi destruído)
+            BlockState spawnBlock = respawnLevel.getBlockState(player.getRespawnPosition());
+            if (spawnBlock.getBlock() instanceof BedBlock || spawnBlock.getBlock() instanceof RespawnAnchorBlock) {
+                return player.getRespawnPosition();
+            }
         }
 
-        return spawnPos;
+        // Se não tiver spawn válido, usa o spawn global do mundo
+        return player.server.getLevel(Level.OVERWORLD).getSharedSpawnPos();
     }
 
     private void teleportToSpawn(ServerPlayer player, BlockPos spawnPos) {
