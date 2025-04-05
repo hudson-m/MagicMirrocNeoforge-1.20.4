@@ -1,14 +1,14 @@
 package com.hudshow.neoforge.armour;
 
-import com.hudshow.neoforge.core.material.ArmourMaterialInit;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.neoforged.neoforge.common.extensions.IItemExtension;
+//import com.hudshow.neoforge.core.material.ArmourMaterialInit;
+//import net.minecraft.world.entity.Entity;
+//import net.minecraft.world.entity.EquipmentSlot;
+//import net.minecraft.world.entity.player.Player;
+//import net.minecraft.world.item.ArmorItem;
+//import net.minecraft.world.item.Item;
+//import net.minecraft.world.item.ItemStack;
+//import net.minecraft.world.level.Level;
+//import net.neoforged.neoforge.common.extensions.IItemExtension;
 
 //public class ExampleArmour extends ArmorItem implements IItemExtension {
 //    public ExampleArmour(Type pType) {

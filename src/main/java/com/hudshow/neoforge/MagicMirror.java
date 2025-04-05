@@ -1,6 +1,5 @@
 package com.hudshow.neoforge;
 
-import com.hudshow.neoforge.core.init.BlockInit;
 import com.hudshow.neoforge.core.init.CreativeModeTabInit;
 import com.hudshow.neoforge.core.init.ItemInit;
 import com.hudshow.neoforge.data.DataGenerators;
